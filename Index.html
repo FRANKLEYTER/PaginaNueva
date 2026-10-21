@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Matemáticas Interactivas</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Iconos Bootstrap -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="estilos.css">
+
+    <!-- MathJax -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+
+<body>
+    <img src="ALBERT.jpg" alt="">
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header class="header text-center">
+
+        <div class="container">
+
+            <div class="math-symbol">π ∑ ∫ √x²</div>
+
+            <h1>
+                Matemáticas Interactivas
+            </h1>
+
+            <p>
+                Aprende matemáticas de una forma visual, divertida e interactiva.
+            </p>
+
+            <button
+                id="btnTema"
+                class="btn btn-light mt-3"
+                onclick="cambiarTema()">
+
+                <i class="bi bi-moon-stars"></i>
+                Cambiar tema
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================================================
+         NAVBAR
+    ================================================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="#inicio">
+
+                <i class="bi bi-calculator"></i>
+                MathWeb
+
+            </a>
+
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#algebra">
+                            Álgebra
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#geometria">
+                            Geometría
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#trigonometria">
+                            Trigonometría
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reto">
+                            Reto
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#grafica">
+                            Laboratorio
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ==================================================
+         CONTENIDO
+    ================================================== -->
+
+    <main id="inicio">
+
+
+        <!-- HERO -->
+
+        <section class="hero-section">
+
+            <div class="container">
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-7">
+
+                        <span class="badge bg-primary mb-3">
+                            APRENDE + PRACTICA + EXPERIMENTA
+                        </span>
+
+                        <h2 class="display-4 fw-bold">
+                            Descubre el lado
+                            <span class="text-primary">
+                                divertido
+                            </span>
+                            de las matemáticas.
+                        </h2>
+
+                        <p class="lead mt-3">
+
+                            Explora fórmulas, resuelve problemas,
+                            experimenta con gráficas y observa las
+                            matemáticas en movimiento.
+
+                        </p>
+
+
+                        <div class="mt-4">
+
+                            <a
+                                href="#reto"
+                                class="btn btn-primary btn-lg me-2">
+
+                                <i class="bi bi-lightning-charge"></i>
+                                Resolver reto
+
+                            </a>
+
+
+                            <a
+                                href="#grafica"
+                                class="btn btn-outline-primary btn-lg">
+
+                                <i class="bi bi-graph-up"></i>
+                                Ver laboratorio
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-5 text-center">
+
+                        <div class="formula-card">
+
+                            <div class="formula-symbol">
+                                ∫
+                            </div>
+
+                            <div class="formula-text">
+
+                                \[
+                                E = mc^2
+                                \]
+
+                                <small>
+                                    Una de las ecuaciones más famosas de la ciencia
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             CONCEPTOS
+        ================================================== -->
+
+        <section class="container py-5">
+
+            <div class="text-center mb-5">
+
+                <span class="badge bg-primary">
+                    CONCEPTOS
+                </span>
+
+                <h2 class="section-title">
+                    Explora las matemáticas
+                </h2>
+
+                <p>
+                    Haz clic en cada tarjeta para descubrir más.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+
+                <!-- ÁLGEBRA -->
+
+                <div class="col-md-4">
+
+                    <div
+                        class="topic-card"
+                        onclick="mostrarConcepto('algebra')">
+
+                        <div class="topic-icon">
+                            <i class="bi bi-x-lg"></i>
+                        </div>
+
+                        <h3>Álgebra</h3>
+
+                        <p>
+                            Trabaja con variables, ecuaciones
+                            y expresiones matemáticas.
+                        </p>
+
+                        <button class="btn btn-outline-primary">
+                            Explorar
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GEOMETRÍA -->
+
+                <div class="col-md-4">
+
+                    <div
+                        class="topic-card"
+                        onclick="mostrarConcepto('geometria')">
+
+                        <div class="topic-icon">
+                            <i class="bi bi-triangle"></i>
+                        </div>
+
+                        <h3>Geometría</h3>
+
+                        <p>
+                            Descubre áreas, perímetros,
+                            figuras y espacios.
+                        </p>
+
+                        <button class="btn btn-outline-primary">
+                            Explorar
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TRIGONOMETRÍA -->
+
+                <div class="col-md-4">
+
+                    <div
+                        class="topic-card"
+                        onclick="mostrarConcepto('trigonometria')">
+
+                        <div class="topic-icon">
+                            <i class="bi bi-activity"></i>
+                        </div>
+
+                        <h3>Trigonometría</h3>
+
+                        <p>
+                            Experimenta con seno, coseno
+                            y ángulos.
+                        </p>
+
+                        <button class="btn btn-outline-primary">
+                            Explorar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PANEL DINÁMICO -->
+
+            <div
+                id="conceptoPanel"
+                class="concept-panel mt-5">
+
+                <h3>
+                    <i class="bi bi-info-circle"></i>
+                    Selecciona un tema
+                </h3>
+
+                <p>
+                    Pulsa cualquiera de las tarjetas anteriores
+                    para obtener información.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             ÁLGEBRA
+        ================================================== -->
+
+        <section id="algebra" class="content-section">
+
+            <div class="container">
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-6">
+
+                        <span class="badge bg-primary">
+                            ÁLGEBRA
+                        </span>
+
+                        <h2 class="section-title">
+                            Resuelve ecuaciones
+                        </h2>
+
+                        <p>
+                            Una ecuación representa una igualdad
+                            matemática.
+                        </p>
+
+                        <div class="formula">
+
+                            \[
+                            2x + 5 = 15
+                            \]
+
+                        </div>
+
+                        <div class="formula">
+
+                            \[
+                            2x = 10
+                            \]
+
+                            \[
+                            x = 5
+                            \]
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-6">
+
+                        <div class="calculator-card">
+
+                            <h3>
+                                <i class="bi bi-calculator"></i>
+                                Calculadora rápida
+                            </h3>
+
+
+                            <label class="form-label">
+                                Escribe un número
+                            </label>
+
+                            <input
+                                type="number"
+                                id="numero"
+                                class="form-control form-control-lg"
+                                value="5">
+
+
+                            <button
+                                class="btn btn-primary w-100 mt-3"
+                                onclick="calcular()">
+
+                                Calcular x²
+
+                            </button>
+
+
+                            <div
+                                id="resultado"
+                                class="result-box mt-3">
+
+                                Resultado: -
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             GEOMETRÍA
+        ================================================== -->
+
+        <section id="geometria" class="container py-5">
+
+            <div class="text-center">
+
+                <span class="badge bg-success">
+                    GEOMETRÍA
+                </span>
+
+                <h2 class="section-title">
+                    Calculadora de área
+                </h2>
+
+                <p>
+                    Introduce el radio de un círculo.
+                </p>
+
+            </div>
+
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-6">
+
+                    <div class="calculator-card">
+
+                        <label class="form-label">
+                            Radio
+                        </label>
+
+                        <input
+                            type="number"
+                            id="radio"
+                            class="form-control"
+                            value="5"
+                            min="0">
+
+
+                        <button
+                            class="btn btn-success w-100 mt-3"
+                            onclick="calcularArea()">
+
+                            Calcular área
+
+                        </button>
+
+
+                        <div
+                            id="areaResultado"
+                            class="result-box mt-3">
+
+                            Área: -
+
+                        </div>
+
+
+                        <div class="formula">
+
+                            \[
+                            A = \pi r^2
+                            \]
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             TRIGONOMETRÍA
+        ================================================== -->
+
+        <section
+            id="trigonometria"
+            class="content-section">
+
+            <div class="container">
+
+                <div class="text-center">
+
+                    <span class="badge bg-warning text-dark">
+                        TRIGONOMETRÍA
+                    </span>
+
+                    <h2 class="section-title">
+                        Calculadora trigonométrica
+                    </h2>
+
+                    <p>
+                        Cambia el ángulo y observa los valores.
+                    </p>
+
+                </div>
+
+
+                <div class="row justify-content-center">
+
+                    <div class="col-md-6">
+
+                        <div class="calculator-card">
+
+                            <label class="form-label">
+                                Ángulo: <span id="anguloValor">45</span>°
+                            </label>
+
+                            <input
+                                type="range"
+                                id="angulo"
+                                class="form-range"
+                                min="0"
+                                max="360"
+                                value="45"
+                                oninput="actualizarTrigonometria()">
+
+
+                            <div class="trig-result">
+
+                                <div>
+                                    <strong>sen</strong>
+                                    <span id="seno">0.707</span>
+                                </div>
+
+                                <div>
+                                    <strong>cos</strong>
+                                    <span id="coseno">0.707</span>
+                                </div>
+
+                                <div>
+                                    <strong>tan</strong>
+                                    <span id="tangente">1.000</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             RETO
+        ================================================== -->
+
+        <section id="reto" class="challenge-section">
+
+            <div class="container">
+
+                <div class="text-center">
+
+                    <span class="badge bg-danger">
+                        RETO MATEMÁTICO
+                    </span>
+
+                    <h2 class="section-title">
+                        ¿Puedes resolverlo?
+                    </h2>
+
+                    <p>
+                        Pon a prueba tus conocimientos.
+                    </p>
+
+                </div>
+
+
+                <div class="challenge-card text-center">
+
+                    <h3>
+                        ¿Cuánto vale x?
+                    </h3>
+
+
+                    <div class="challenge-equation">
+
+                        \[
+                        3x + 6 = 21
+                        \]
+
+                    </div>
+
+
+                    <div class="row justify-content-center">
+
+                        <div class="col-md-5">
+
+                            <input
+                                type="number"
+                                id="respuesta"
+                                class="form-control form-control-lg text-center"
+                                placeholder="Escribe tu respuesta">
+
+
+                            <button
+                                class="btn btn-danger mt-3"
+                                onclick="verificarRespuesta()">
+
+                                Comprobar
+
+                            </button>
+
+
+                            <div
+                                id="mensajeReto"
+                                class="mt-3 fw-bold">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             LABORATORIO P5.JS
+        ================================================== -->
+
+        <section
+            id="grafica"
+            class="interactive-section">
+
+            <div class="container">
+
+                <div class="text-center text-white">
+
+                    <span class="badge bg-light text-dark">
+                        P5.JS
+                    </span>
+
+                    <h2 class="section-title text-white">
+                        Laboratorio trigonométrico
+                    </h2>
+
+                    <p>
+                        Mueve el control para cambiar el ángulo
+                        del círculo y observa el seno y coseno.
+                    </p>
+
+                </div>
+
+
+                <div class="p5-controls">
+
+                    <label>
+                        Velocidad de animación
+                    </label>
+
+                    <input
+                        type="range"
+                        id="velocidad"
+                        min="1"
+                        max="10"
+                        value="3"
+                        class="form-range">
+
+                    <button
+                        id="btnAnimacion"
+                        class="btn btn-light"
+                        onclick="alternarAnimacion()">
+
+                        <i class="bi bi-pause-fill"></i>
+                        Pausar
+
+                    </button>
+
+                </div>
+
+
+                <div id="canvas-container"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             EINSTEIN
+        ================================================== -->
+
+        <section class="einstein-section">
+
+            <div class="container">
+
+                <div class="row align-items-center">
+
+                    <div class="col-md-7">
+
+                        <span class="badge bg-dark">
+                            CURIOSIDAD
+                        </span>
+
+                        <h2 class="section-title">
+                            Matemáticas y ciencia
+                        </h2>
+
+                        <p class="lead">
+
+                            Las matemáticas han sido fundamentales
+                            para grandes descubrimientos científicos.
+
+                        </p>
+
+                        <div class="formula">
+
+                            \[
+                            E = mc^2
+                            \]
+
+                        </div>
+
+                        <p>
+                            Esta ecuación está asociada con
+                            Albert Einstein y la relación entre
+                            masa y energía.
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-md-5 text-center">
+
+                        <div class="einstein-placeholder">
+
+                            <div class="einstein-face">
+                                🧑‍🔬
+                            </div>
+
+                            <p class="mt-3">
+                                Albert Einstein
+                            </p>
+
+                            <small>
+                                Aquí puedes colocar tu imagen de Einstein.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <h4>
+                        <i class="bi bi-calculator"></i>
+                        MathWeb
+                    </h4>
+
+                    <p>
+                        Una página educativa para aprender
+                        matemáticas de manera interactiva.
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-6 text-md-end">
+
+                    <p>
+                        &copy; 2026 Matemáticas Interactivas
+                    </p>
+
+                    <p>
+                        Bootstrap · MathJax · p5.js
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==================================================
+         BOOTSTRAP
+    ================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- ==================================================
+         P5.JS
+    ================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/p5@1.11.1/lib/p5.min.js">
+    </script>
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script>
+
+        /* ==============================================
+           CAMBIAR TEMA
+        ============================================== */
+
+        function cambiarTema() {
+
+            document.body.classList.toggle("dark-mode");
+
+            const boton = document.getElementById("btnTema");
+
+            if (document.body.classList.contains("dark-mode")) {
+
+                boton.innerHTML =
+                    '<i class="bi bi-sun"></i> Tema claro';
+
+            } else {
+
+                boton.innerHTML =
+                    '<i class="bi bi-moon-stars"></i> Cambiar tema';
+
+            }
+
+        }
+
+
+        /* ==============================================
+           CONCEPTOS
+        ============================================== */
+
+        function mostrarConcepto(tipo) {
+
+            const panel =
+                document.getElementById("conceptoPanel");
+
+
+            if (tipo === "algebra") {
+
+                panel.innerHTML = `
+
+                    <h3>Álgebra</h3>
+
+                    <p>
+                        El álgebra permite representar cantidades
+                        desconocidas mediante letras.
+                    </p>
+
+                    <div class="formula">
+                        \\[
+                        2x + 5 = 15
+                        \\]
+                    </div>
+
+                `;
+
+            }
+
+
+            if (tipo === "geometria") {
+
+                panel.innerHTML = `
+
+                    <h3>Geometría</h3>
+
+                    <p>
+                        La geometría estudia las propiedades
+                        de las figuras y el espacio.
+                    </p>
+
+                    <div class="formula">
+                        \\[
+                        A = \\pi r^2
+                        \\]
+                    </div>
+
+                `;
+
+            }
+
+
+            if (tipo === "trigonometria") {
+
+                panel.innerHTML = `
+
+                    <h3>Trigonometría</h3>
+
+                    <p>
+                        Estudia las relaciones entre ángulos
+                        y lados de los triángulos.
+                    </p>
+
+                    <div class="formula">
+                        \\[
+                        \\sin^2(x) + \\cos^2(x) = 1
+                        \\]
+                    </div>
+
+                `;
+
+            }
+
+
+            MathJax.typesetPromise();
+
+        }
+
+
+        /* ==============================================
+           CALCULADORA
+        ============================================== */
+
+        function calcular() {
+
+            const numero =
+                Number(document.getElementById("numero").value);
+
+
+            const resultado =
+                numero * numero;
+
+
+            document.getElementById("resultado").innerHTML =
+                `Resultado: <strong>${resultado}</strong>`;
+
+        }
+
+
+        /* ==============================================
+           ÁREA DEL CÍRCULO
+        ============================================== */
+
+        function calcularArea() {
+
+            const radio =
+                Number(document.getElementById("radio").value);
+
+
+            if (radio < 0) {
+
+                document.getElementById("areaResultado").innerHTML =
+                    "El radio no puede ser negativo.";
+
+                return;
+
+            }
+
+
+            const area =
+                Math.PI * radio * radio;
+
+
+            document.getElementById("areaResultado").innerHTML =
+                `Área: <strong>${area.toFixed(2)}</strong>`;
+
+        }
+
+
+        /* ==============================================
+           TRIGONOMETRÍA
+        ============================================== */
+
+        function actualizarTrigonometria() {
+
+            const angulo =
+                Number(document.getElementById("angulo").value);
+
+
+            const radianes =
+                angulo * Math.PI / 180;
+
+
+            const seno =
+                Math.sin(radianes);
+
+
+            const coseno =
+                Math.cos(radianes);
+
+
+            const tangente =
+                Math.tan(radianes);
+
+
+            document.getElementById("anguloValor")
+                .textContent = angulo;
+
+
+            document.getElementById("seno")
+                .textContent = seno.toFixed(3);
+
+
+            document.getElementById("coseno")
+                .textContent = coseno.toFixed(3);
+
+
+            if (Math.abs(coseno) < 0.0001) {
+
+                document.getElementById("tangente")
+                    .textContent = "∞";
+
+            } else {
+
+                document.getElementById("tangente")
+                    .textContent = tangente.toFixed(3);
+
+            }
+
+        }
+
+
+        /* ==============================================
+           RETO MATEMÁTICO
+        ============================================== */
+
+        function verificarRespuesta() {
+
+            const respuesta =
+                Number(document.getElementById("respuesta").value);
+
+
+            const mensaje =
+                document.getElementById("mensajeReto");
+
+
+            if (respuesta === 5) {
+
+                mensaje.innerHTML =
+                    "🎉 ¡Correcto! x = 5";
+
+                mensaje.className =
+                    "mt-3 fw-bold text-success";
+
+            } else {
+
+                mensaje.innerHTML =
+                    "❌ Inténtalo nuevamente.";
+
+                mensaje.className =
+                    "mt-3 fw-bold text-danger";
+
+            }
+
+        }
+
+
+        /* ==============================================
+           P5.JS
+        ============================================== */
+
+        let angle = 0;
+
+        let animacionActiva = true;
+
+
+        function setup() {
+
+            const canvas =
+                createCanvas(700, 450);
+
+            canvas.parent("canvas-container");
+
+            angleMode(DEGREES);
+
+        }
+
+
+        function draw() {
+
+            background(
+                document.body.classList.contains("dark-mode")
+                    ? 25
+                    : 245
+            );
+
+
+            const velocidad =
+                Number(
+                    document.getElementById("velocidad").value
+                );
+
+
+            if (animacionActiva) {
+
+                angle += velocidad;
+
+            }
+
+
+            if (angle >= 360) {
+
+                angle = 0;
+
+            }
+
+
+            /* ==========================================
+               CÍRCULO
+            ========================================== */
+
+            const circleX = 190;
+            const circleY = 180;
+            const radius = 100;
+
+
+            stroke(120);
+
+            strokeWeight(2);
+
+            noFill();
+
+
+            circle(
+                circleX,
+                circleY,
+                radius * 2
+            );
+
+
+            line(
+                circleX - radius,
+                circleY,
+                circleX + radius,
+                circleY
+            );
+
+
+            line(
+                circleX,
+                circleY - radius,
+                circleX,
+                circleY + radius
+            );
+
+
+            /* ==========================================
+               PUNTO
+            ========================================== */
+
+            const pointX =
+                circleX +
+                radius *
+                cos(angle);
+
+
+            const pointY =
+                circleY -
+                radius *
+                sin(angle);
+
+
+            stroke("#0d6efd");
+
+            strokeWeight(3);
+
+            line(
+                circleX,
+                circleY,
+                pointX,
+                pointY
+            );
+
+
+            noStroke();
+
+            fill("#0d6efd");
+
+            circle(
+                pointX,
+                pointY,
+                14
+            );
+
+
+            /* ==========================================
+               SENO Y COSENO
+            ========================================== */
+
+            const graphX = 400;
+            const graphY = 180;
+            const graphWidth = 250;
+            const amplitude = 70;
+
+
+            stroke(120);
+
+            strokeWeight(1);
+
+            line(
+                graphX,
+                graphY,
+                graphX + graphWidth,
+                graphY
+            );
+
+
+            line(
+                graphX,
+                graphY - amplitude,
+                graphX,
+                graphY + amplitude
+            );
+
+
+            /* COSENO */
+
+            noFill();
+
+            stroke("orange");
+
+            strokeWeight(3);
+
+            beginShape();
+
+            for (
+                let t = 0;
+                t <= 360;
+                t += 2
+            ) {
+
+                const x =
+                    map(
+                        t,
+                        0,
+                        360,
+                        graphX,
+                        graphX + graphWidth
+                    );
+
+
+                const y =
+                    graphY -
+                    amplitude *
+                    cos(t);
+
+
+                vertex(x, y);
+
+            }
+
+            endShape();
+
+
+            /* SENO */
+
+            stroke("#dc3545");
+
+            beginShape();
+
+            for (
+                let t = 0;
+                t <= 360;
+                t += 2
+            ) {
+
+                const x =
+                    map(
+                        t,
+                        0,
+                        360,
+                        graphX,
+                        graphX + graphWidth
+                    );
+
+
+                const y =
+                    graphY -
+                    amplitude *
+                    sin(t);
+
+
+                vertex(x, y);
+
+            }
+
+            endShape();
+
+
+            /* LÍNEA DE ÁNGULO */
+
+            const currentX =
+                map(
+                    angle,
+                    0,
+                    360,
+                    graphX,
+                    graphX + graphWidth
+                );
+
+
+            stroke(100);
+
+            strokeWeight(1);
+
+            line(
+                currentX,
+                graphY - amplitude,
+                currentX,
+                graphY + amplitude
+            );
+
+
+            /* PUNTOS */
+
+            noStroke();
+
+
+            fill("orange");
+
+            circle(
+                currentX,
+                graphY -
+                amplitude *
+                cos(angle),
+                12
+            );
+
+
+            fill("#dc3545");
+
+            circle(
+                currentX,
+                graphY -
+                amplitude *
+                sin(angle),
+                12
+            );
+
+
+            /* ==========================================
+               TEXTO
+            ========================================== */
+
+            fill(
+                document.body.classList.contains("dark-mode")
+                    ? 255
+                    : 30
+            );
+
+            noStroke();
+
+            textSize(18);
+
+            text(
+                "Ángulo: " +
+                Math.round(angle) +
+                "°",
+                30,
+                30
+            );
+
+
+            text(
+                "coseno",
+                500,
+                95
+            );
+
+
+            text(
+                "seno",
+                500,
+                280
+            );
+
+        }
+
+
+        /* ==============================================
+           PAUSAR / CONTINUAR
+        ============================================== */
+
+        function alternarAnimacion() {
+
+            animacionActiva =
+                !animacionActiva;
+
+
+            const boton =
+                document.getElementById("btnAnimacion");
+
+
+            if (animacionActiva) {
+
+                boton.innerHTML =
+                    '<i class="bi bi-pause-fill"></i> Pausar';
+
+            } else {
+
+                boton.innerHTML =
+                    '<i class="bi bi-play-fill"></i> Continuar';
+
+            }
+
+        }
+
+
+        /* ==============================================
+           INICIAR TRIGONOMETRÍA
+        ============================================== */
+
+        actualizarTrigonometria();
+
+    </script>
+
+</body>
+
+</html>

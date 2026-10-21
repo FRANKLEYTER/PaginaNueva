@@ -1,0 +1,635 @@
+/* ==================================================
+   VARIABLES
+================================================== */
+
+:root {
+
+    --azul: #0d6efd;
+    --azul-oscuro: #084298;
+    --morado: #6610f2;
+    --fondo: #f5f7fb;
+    --texto: #212529;
+    --tarjeta: #ffffff;
+
+}
+
+
+/* ==================================================
+   GENERAL
+================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--fondo);
+
+    color: var(--texto);
+
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+
+}
+
+
+section {
+    scroll-margin-top: 75px;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.header {
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d6efd,
+            #6610f2
+        );
+
+    color: white;
+
+    padding: 70px 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.header::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border: 40px solid rgba(255,255,255,0.08);
+
+    border-radius: 50%;
+
+    top: -100px;
+    right: -80px;
+
+}
+
+
+.header h1 {
+
+    font-size: 3.5rem;
+
+    font-weight: 800;
+
+}
+
+
+.header p {
+
+    font-size: 1.25rem;
+
+}
+
+
+.math-symbol {
+
+    font-size: 2rem;
+
+    letter-spacing: 15px;
+
+    opacity: 0.8;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero-section {
+
+    padding: 90px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #eef5ff
+        );
+
+}
+
+
+.section-title {
+
+    font-weight: 800;
+
+    margin-top: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.formula-card {
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.12);
+
+    transform: rotate(2deg);
+
+}
+
+
+.formula-symbol {
+
+    font-size: 5rem;
+
+    color: var(--azul);
+
+}
+
+
+.formula-text {
+
+    font-size: 1.5rem;
+
+}
+
+
+/* ==================================================
+   TARJETAS
+================================================== */
+
+.topic-card {
+
+    background: var(--tarjeta);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    height: 100%;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.08);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+
+}
+
+
+.topic-card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 18px 40px rgba(13,110,253,0.2);
+
+}
+
+
+.topic-icon {
+
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #e7f1ff;
+
+    color: var(--azul);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 1.8rem;
+
+}
+
+
+.topic-card h3 {
+
+    font-weight: bold;
+
+}
+
+
+/* ==================================================
+   PANEL CONCEPTOS
+================================================== */
+
+.concept-panel {
+
+    background: white;
+
+    border-left:
+        5px solid var(--azul);
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.07);
+
+}
+
+
+/* ==================================================
+   SECCIONES
+================================================== */
+
+.content-section {
+
+    padding: 90px 20px;
+
+    background: #eef5ff;
+
+}
+
+
+/* ==================================================
+   FÓRMULAS
+================================================== */
+
+.formula {
+
+    background: #f8f9fa;
+
+    border-left:
+        5px solid var(--azul);
+
+    padding: 20px;
+
+    margin: 20px 0;
+
+    text-align: center;
+
+    border-radius: 8px;
+
+    font-size: 1.2rem;
+
+}
+
+
+/* ==================================================
+   CALCULADORAS
+================================================== */
+
+.calculator-card {
+
+    background: var(--tarjeta);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.1);
+
+}
+
+
+.result-box {
+
+    background: #e7f1ff;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    font-size: 1.2rem;
+
+}
+
+
+/* ==================================================
+   TRIGONOMETRÍA
+================================================== */
+
+.trig-result {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+}
+
+
+.trig-result div {
+
+    padding: 20px;
+
+    background: #f8f9fa;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+}
+
+
+.trig-result span {
+
+    display: block;
+
+    font-size: 1.4rem;
+
+    color: var(--azul);
+
+}
+
+
+/* ==================================================
+   RETO
+================================================== */
+
+.challenge-section {
+
+    padding: 90px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff5f5,
+            #ffecec
+        );
+
+}
+
+
+.challenge-card {
+
+    max-width: 700px;
+
+    margin: 40px auto 0;
+
+    padding: 45px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.1);
+
+}
+
+
+.challenge-equation {
+
+    font-size: 2rem;
+
+    margin: 30px;
+
+}
+
+
+/* ==================================================
+   P5.JS
+================================================== */
+
+.interactive-section {
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #101828,
+            #172554
+        );
+
+}
+
+
+.p5-controls {
+
+    max-width: 500px;
+
+    margin: 30px auto;
+
+    padding: 20px;
+
+    background:
+        rgba(255,255,255,0.1);
+
+    border-radius: 15px;
+
+    color: white;
+
+}
+
+
+#canvas-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow-x: auto;
+
+}
+
+
+#canvas-container canvas {
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.4);
+
+}
+
+
+/* ==================================================
+   EINSTEIN
+================================================== */
+
+.einstein-section {
+
+    padding: 90px 20px;
+
+    background: white;
+
+}
+
+
+.einstein-placeholder {
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9ecef,
+            #dee2e6
+        );
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.1);
+
+}
+
+
+.einstein-face {
+
+    font-size: 8rem;
+
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.footer {
+
+    background: #212529;
+
+    color: white;
+
+    padding: 45px 20px;
+
+}
+
+
+/* ==================================================
+   MODO OSCURO
+================================================== */
+
+.dark-mode {
+
+    --fondo: #101418;
+
+    --texto: #f1f3f5;
+
+    --tarjeta: #1d2329;
+
+}
+
+
+.dark-mode .hero-section {
+
+    background: #101418;
+
+}
+
+
+.dark-mode .einstein-section {
+
+    background: #101418;
+
+}
+
+
+.dark-mode .concept-panel {
+
+    background: #1d2329;
+
+}
+
+
+.dark-mode .formula {
+
+    background: #252b32;
+
+}
+
+
+.dark-mode .trig-result div {
+
+    background: #252b32;
+
+}
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 768px) {
+
+    .header h1 {
+
+        font-size: 2.3rem;
+
+    }
+
+
+    .hero-section {
+
+        padding: 60px 20px;
+
+    }
+
+
+    .formula-card {
+
+        margin-top: 40px;
+
+    }
+
+
+    #canvas-container canvas {
+
+        width: 100% !important;
+
+        height: auto !important;
+
+    }
+
+
+    .trig-result {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
